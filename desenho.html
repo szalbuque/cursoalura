@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<canvas id="meuCanvas" width = "1000" height = "1000"></canvas>
+
+<script>
+    var canvas = document.getElementById('meuCanvas');
+    var pincel = canvas.getContext('2d');
+    var x = 1;
+    var y = 1;
+    var raio = 10;
+    var aum_raio = 0.1;
+    var ini = 0;
+    var fin = Math.PI*2;
+
+	for (i = 0; i < 10000; i++) {
+  		pincel.beginPath();
+  			pincel.arc(x, y, raio, ini, fin);
+  			pincel.stroke();
+  		pincel.closePath();
+  		//x++;
+  		//y++;
+  		aum_raio = aum_raio + 0.1;
+  		raio = raio + aum_raio;
+  		//ini = ini + 0.1;
+  		//fin = fin - 0.1;
+	}
+
+
+</script>
