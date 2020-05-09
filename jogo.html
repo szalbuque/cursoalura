@@ -1,0 +1,23 @@
+<meta charset="UFT-8">
+<script>
+	function pulaLinhas(num){
+		var i=0;
+		for (i==0; i<num; i++) {
+			document.write("<br>");
+		}
+	} 
+	function mostra(frase){
+		document.write("<big>" + frase + "</big>");
+		pulaLinhas(1);
+	}
+	var numeroPensado = Math.round(Math.random()*10);
+	console.log(numeroPensado);
+	var numeroInformado = parseInt(prompt("Digite um número de 1 a 10:"));
+	if (numeroInformado == numeroPensado){
+		mostra("Você acertou!")}
+	else {
+		mostra("Você errou, o número pensado foi: "+numeroPensado);
+	}
+	
+	mostra("Fim!");
+</script>

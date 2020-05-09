@@ -1,0 +1,21 @@
+<meta charset="UFT-8">
+<script>
+	function calculaImc(peso,altura){
+		return peso/(altura*altura);
+	}
+	function pulaLinhas(num){
+		var i=0;
+		for (i==0; i<num; i++) {
+			document.write("<br>");
+		}
+	} 
+	function mostra(frase){
+		document.write("<big>" + frase + "</big>");
+		pulaLinhas(1);
+	}
+	var alturaInformada = prompt("Digite sua altura, usando ponto para casas decimais:");
+	var pesoInformado = prompt("Digite seu peso, usando ponto para casas decimais:");
+	mostra("Seu IMC é: " + calculaImc(pesoInformado,alturaInformada));
+	pulaLinhas(2);
+	mostra("Fim!");
+</script>

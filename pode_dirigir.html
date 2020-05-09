@@ -1,0 +1,24 @@
+<meta charset="UFT-8">
+<script>
+	function pulaLinhas(num){
+		var i=0;
+		for (i==0; i<num; i++) {
+			document.write("<br>");
+		}
+	} 
+	function mostra(frase){
+		document.write("<big>" + frase + "</big>");
+		pulaLinhas(1);
+	}
+	var idade = parseInt(prompt("Digite a sua idade:"));
+	var respDigitada = prompt("Tem carteira de habilitação? (S ou N)");
+	var temCarteira = respDigitada.toUpperCase();
+	console.log(idade);
+	console.log(temCarteira);
+	if(idade >= 18 && temCarteira=="S"){
+		mostra("Pode dirigir!") }
+		else {
+			mostra ("Não pode dirigir!")
+	}
+	mostra("Fim!");
+</script>

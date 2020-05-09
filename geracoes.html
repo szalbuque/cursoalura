@@ -1,0 +1,19 @@
+<meta charset="UFT-8">
+<script>
+	function pulaLinhas(num){
+		var i=0;
+		for (i==0; i<num; i++) {
+			document.write("<br>");
+		}
+	} 
+	function mostra(frase){
+		document.write("<big>" + frase + "</big>");
+		pulaLinhas(1);
+	}
+	var anos=2020-1500;
+	var geracoes=anos/28;
+	mostra("Passaram " + Math.round(geracoes) + " gerações.");
+	mostra("<hr>");
+	pulaLinhas(2);
+	mostra("Fim");
+</script>

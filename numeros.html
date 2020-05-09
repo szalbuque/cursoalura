@@ -1,0 +1,24 @@
+<meta charset="UFT-8">
+<script>
+	function pulaLinhas(num){
+		var i=0;
+		for (i==0; i<num; i++) {
+			document.write("<br>");
+		}
+	} 
+	function mostra(frase){
+		document.write("<big>" + frase + "</big>");
+		pulaLinhas(1);
+	}
+	var contador = 30;
+	console.log(contador);
+	while (contador <= 40) {
+		console.log(contador);
+		if (contador != 33 && contador != 37) {
+			mostra (contador);	
+		}
+		
+		contador++;
+	}
+	mostra("Fim!");
+</script>
