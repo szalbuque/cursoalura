@@ -1,0 +1,37 @@
+<!--Cria uma tela (canvas) de 600 x 400 pixels no HTML-->
+<canvas width="600" height="400"></canvas>
+
+<script>
+	//este script vai desenhar um esquadro
+
+	//a variável tela captura o objeto canvas do HTML para o javascript
+	var tela = document.querySelector("canvas");
+
+	//pincel será o método usado para desenhar na tela
+	var pincel = tela.getContext('2d');
+
+	//alterando o estilo do pincel com o atributo fillStyle
+	pincel.fillStyle = 'lightgray';
+
+	//desenhando o canvas em cinza claro
+	pincel.fillRect(0,0,600,400);
+
+    //desenhando o triângulo maior preto
+    pincel.fillStyle = 'black';
+    pincel.beginPath();
+    pincel.moveTo(50,50);
+    pincel.lineTo(400,400);
+    pincel.lineTo(50,400);
+    pincel.fill();
+    pincel.closePath();
+
+    //desenhando o triângulo menor branco
+    pincel.fillStyle = 'white';
+    pincel.beginPath();
+    pincel.moveTo(100,175);
+    pincel.lineTo(275,350);
+    pincel.lineTo(100,350);
+    pincel.fill();
+    pincel.closePath();
+
+</script>
