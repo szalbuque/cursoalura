@@ -16,22 +16,21 @@
 	//desenhando o canvas em cinza claro
 	pincel.fillRect(0,0,600,400);
 
-    //desenhando o triângulo maior preto
-    pincel.fillStyle = 'black';
-    pincel.beginPath();
-    pincel.moveTo(50,50);
-    pincel.lineTo(400,400);
-    pincel.lineTo(50,400);
-    pincel.fill();
-    pincel.closePath();
+    function desenhaTriangulo (x1,y1,x2,y2,cor){
+        // desenha um triângulo dados dois pontos cartesianos
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.moveTo(x1,y1);
+        pincel.lineTo(x2,y2);
+        pincel.lineTo(x1,y2);
+        pincel.fill();
+        pincel.closePath();
+    }
 
-    //desenhando o triângulo menor branco
-    pincel.fillStyle = 'white';
-    pincel.beginPath();
-    pincel.moveTo(100,175);
-    pincel.lineTo(275,350);
-    pincel.lineTo(100,350);
-    pincel.fill();
-    pincel.closePath();
+    desenhaTriangulo(50,50,400,400,'black');
+    desenhaTriangulo(100,175,275,350,'white');
+    
 
+
+    
 </script>

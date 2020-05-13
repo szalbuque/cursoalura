@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+<h3>Gráfico de Barras - % Uso dos navegadores em 2015/2016</h3>
+<canvas id="meuCanvas" width = "1000" height = "1000"></canvas>
+
+<script>
+    var canvas = document.getElementById('meuCanvas');
+    var pincel = canvas.getContext('2d');
+    var x = 0;
+    var y = 0;
+    var base = 1000;
+    var altura = 1000;
+    var larguraBarra = 50;
+    var serie2015=[50,25,20,5];
+    var serie2016=[65,20,13,2];
+    var navegadores=['Chrome','Firefox','Safari','Outros'];
+    var cores = ['blue','green','yellow','red'];
+
+    function desenhaRetangulo(x,y,base,altura,cor){
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, base, altura);
+    }
+
+    function desenhaTexto (x, y, texto, cor, fonte, tam){
+        //pincel.font='15px Georgia';
+        pincel.font=tam+"px "+fonte;
+        pincel.fillStyle= cor;
+        pincel.fillText(texto, x, y);  
+    }
+
+    function desenhaBarra(x, y, largura, serie, cores, legenda){
+        for (var i=0; i < serie.length; i++){
+            desenhaRetangulo(x , y, largura, serie[i], cores[i]);
+            console.log(i, x, y, largura, serie[i], cores[i]);
+            y=y+serie[i];
+        }
+        desenhaTexto (x, y+50, legenda, 'black', 'Courier', '18');
+    }
+
+    function desenhaLegenda(x,y, largura, altura, serie, cores){
+        for (var i=0; i < serie.length; i++){
+            desenhaRetangulo(x, y, largura, altura, cores[i]);
+            desenhaTexto(x+largura, y+20, serie[i], 'black', 'Courier', '18');
+            y = y + 20;
+        }
+    }
+
+    var inix = 50;
+    var iniy = 50;
+    desenhaBarra(inix, iniy ,larguraBarra, serie2015, cores, '2015');
+    desenhaBarra(inix+larguraBarra+20, iniy, larguraBarra, serie2016, cores, '2016');
+    var posLegX = inix + larguraBarra*2 + 50;
+    var posLegY = iniy;
+    desenhaLegenda(posLegX, posLegY, larguraBarra, 20, navegadores, cores);
+</script>

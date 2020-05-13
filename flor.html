@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+<h3>Flor</h3>
+<canvas id="meuCanvas" width = "1000" height = "1000"></canvas>
+
+<script>
+    var canvas = document.getElementById('meuCanvas');
+    var pincel = canvas.getContext('2d');
+    var x = 0;
+    var y = 0;
+    var base = 1000;
+    var altura = 1000;
+
+    function desenhaCirculo(x,y,raio,cor){
+        pincel.beginPath();
+        pincel.fillStyle = cor;
+        pincel.arc(x,y,raio,0,2*Math.PI);
+        pincel.fill();
+        pincel.closePath();
+    }
+
+    function desenhaRetangulo(x,y,base,altura,cor){
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, base, altura);
+    }
+
+    // desenha os limites do canvas
+    desenhaRetangulo(x,y,base,altura,'lightgray')
+	
+    //desenha as linhas verticais da malha do canvas
+	for (i = 0; i < 100; i++) {
+		pincel.beginPath();
+			var xs = x.toString();
+			// strokeText(text, x, y [, maxWidth]) desenha um texto na posição x,y
+			pincel.font = '9px serif';
+			pincel.strokeText(xs,x,10);
+			x = x + 50;
+			pincel.moveTo(x,y);
+			pincel.lineTo(x,y+1000);
+			pincel.stroke();
+		pincel.closePath();
+	}
+
+	//desenha as linhas horizontais da malha do canvas
+	y = 0;
+	x = 0;
+    for (i = 0; i < 100; i++) {
+    	pincel.beginPath();
+			var ys = y.toString();
+			pincel.strokeText(ys,0,y);
+    		y = y + 50;
+    		pincel.moveTo(x,y);
+    		pincel.lineTo(x+1000,y);
+    		pincel.stroke();
+    	pincel.closePath();
+	}
+	
+    x = 300;
+    y = 200;
+    raio = 50;
+    desenhaCirculo(x,y,raio,'red');
+    desenhaCirculo(x+2*raio,y,raio,'black');
+    desenhaCirculo(x,y+2*raio,raio,'blue');
+    desenhaCirculo(x-2*raio,y,raio,'orange');
+    desenhaCirculo(x,y-2*raio,raio,'yellow');
+
+	
+</script>
