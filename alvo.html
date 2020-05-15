@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<h1>Acerte o alvo!</h1>
+<canvas id="meuCanvas" height="600" width="600"></canvas>
+<script>
+    var tela = document.getElementById("meuCanvas");
+    var pincel = tela.getContext('2d');
+    var xCentro = 300;
+    var yCentro = 300;
+    var raio = 100;
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0,0,600,600);
+
+    //desenha um círculo com centro em x,y, preenchido com corP e contorno de corL
+    function desenhaCirculo(x,y,raio,corP,corL){
+        pincel.fillStyle = corP;
+        pincel.strokeStyle = corL;
+        pincel.stroke();
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2*Math.PI);
+        pincel.fill();
+        pincel.closePath();
+    }
+
+    tela.onclick = function(evento){
+        var xClick = evento.pageX - tela.offsetLeft;
+        var yClick = evento.pageY - tela.offsetTop;
+        var limiteInfX = xCentro-raio;
+        var limiteSupX = xCentro+raio;
+        var limiteInfY = yCentro-raio;
+        var limiteSupY = yCentro+raio;
+        if (limiteInfX <= xClick && xClick <= limiteSupX) {
+            if (limiteInfY <= yClick && yClick <= limiteSupY) {
+                alert('Acertou!');
+            }
+        }
+    }
+
+    //desenha um alvo
+    desenhaCirculo(xCentro,yCentro,raio+200,'yellow','yellow');
+    desenhaCirculo(xCentro,yCentro,raio+100,'white','white');
+    desenhaCirculo(xCentro,yCentro,raio,'red','red');
+</script>

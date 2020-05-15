@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+<h1>Desenhando com o mouse:</h1>
+<p>Clique e arraste com o botão esquerdo do mouse, para desenhar.</p>
+<!--<p>Use o botão da direita do mouse para mudar de cor.</p>-->
+<p>Use o SHIFT para aumentar o pincel.</p>
+<p>Use o CTRL para diminuir o pincel.</p>
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var cores = ['blue','red','green','yellow','black','pink'];
+    var corAtual = 0;
+    var raio = 10;
+    var desenha = false;
+
+    //Pinta o canvas de cinza
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    //Gera um número inteiro aleatório entre os valores min e max
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    // atribuindo diretamente a função anônima ao movimento do mouse
+    tela.onmousemove = function(evento) {
+      
+        //captura as coordenadas do clique, descontando o offset do canvas em relação à página do navegador
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+    
+        if(desenha) {
+
+            //clicar enquanto aperta o Shift aumenta o raio do círculo
+            if (evento.shiftKey){
+                raio = raio + 1;
+            }
+
+            //clicar enquanto aperta o Ctrl diminui o raio do círculo (o mínimo é 10)
+            if (evento.ctrlKey){
+                raio = raio - 1;
+                if (raio < 10) {
+                    raio = 10;
+                }
+            }
+
+            //desenha um círculo na cor atual
+            corAtual = getRandomInt (0,cores.length);
+            pincel.fillStyle = cores[corAtual];
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * 3.14);
+            pincel.fill();
+            console.log(x + ',' + y);
+        }
+
+        
+    }
+
+    //se o botão esquerdo do mouse estiver pressionado vai desenhar
+    tela.onmousedown = function() {
+        desenha = true;
+    }
+
+    //se o botão esquerdo do mouse não estiver pressionado, não vai desenhar
+    tela.onmouseup = function() {
+        desenha = false;
+    }
+
+    /*//se clicar com o botão da direita, muda a cor do pincel
+    tela.oncontextmenu = function(){
+        corAtual++;
+        if (corAtual > 2) {
+            corAtual = 0;
+        }
+        // Muda para uma cor aleatória
+        corAtual = getRandomInt (0,cores.length);
+        //o return false é para não abrir o menu de contexto
+        return false;
+    }*/
+     
+
+   
+
+</script>

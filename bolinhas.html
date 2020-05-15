@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<h1>Bolinhas:</h1>
+<h3>Clique com o botão da esquerda para desenhar as bolinhas,</h3>
+<h3>com o botão da direita para mudar a cor, use o SHIFT para aumentar e o CTRL para diminuir o tamanho.</h3>
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var cores = ['blue','red','green'];
+    var corAtual = 0;
+    var raio = 10;
+
+    //Pinta o canvas de cinza
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(evento) {
+        //captura as coordenadas do clique, descontando o offset do canvas em relação à página do navegador
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        //desenha um círculo na cor atual
+        pincel.fillStyle = cores[corAtual];
+
+        //clicar enquanto aperta o Shift aumenta o raio do círculo
+        if (evento.shiftKey){
+            raio = raio + 10;
+        }
+
+        //clicar enquanto aperta o Ctrl diminui o raio do círculo (o mínimo é 10)
+        if (evento.ctrlKey){
+            raio = raio - 10;
+            if (raio < 10) {
+                raio = 10;
+            }
+        }
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
+    }
+
+    tela.onclick = desenhaCirculo;
+
+    function mudaCor() {
+        corAtual++;
+        if (corAtual > 2) {
+            corAtual = 0;
+        }
+        //alert('Cor atual: '+ cores[corAtual]);
+        
+        //o return false é para não abrir o menu de contexto
+        return false;
+    }
+
+    //o evento oncontextmenu captura o clique com o botão direito do mouse
+    tela.oncontextmenu = mudaCor;
+
+</script>
