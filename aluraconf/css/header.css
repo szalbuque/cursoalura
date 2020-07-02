@@ -1,0 +1,195 @@
+.header {
+  background: url('../img/destaque.jpeg') no-repeat;
+  background-size: cover;
+  padding-top: 32px;
+}
+
+.header .main-menu {
+  text-align: center;
+}
+
+.header .main-menu .menu-item {
+  display: inline-block;
+  margin: 0 2px 32px 0;
+}
+
+.header .main-menu .menu-item a {
+
+  color: white;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.5s;
+}
+
+.header .main-menu .menu-item a:hover {
+
+  background-color: #48A3A6;
+}
+
+.painel {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.header .painel .painel-sup h1 {
+	font-size: 2.5em;
+	padding:0.2em;
+	text-shadow: 0.1em 0.1em 0.1em grey;
+}
+
+.header .painel .painel-sup h2 {
+	font-size: 1.5em;
+	padding:0.1em;
+	color: #64ff64;
+	margin-top: 0.1em;
+}
+
+.header .painel .painel-inf {
+	margin: 0.1em;
+}
+
+.header .painel .button{
+	display: inline-block;
+	background-color: #48A3A6;
+    border-radius: 0.1em;
+    box-shadow: 0.1em 0.1em 0.2em grey;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin: 0.3em;
+    padding: 0.2em;
+}
+
+@media(min-width: 650px) {
+
+    .header .painel {
+
+        font-size: 28px;
+    }
+
+}
+
+.infos .tit-infos {
+	font-size: 1.8em;
+	font-weight: bold;
+	text-align:center;
+	margin:0.2em;
+}
+
+.infos .sub-tit-infos {
+	font-size: 1.2em;
+	font-weight: bold;
+	font-stretch: expanded;
+	text-align:center;
+	margin:0.1em;
+}
+
+.infos .p-infos {
+	font-size: 1em;
+	text-align: justify;
+	margin:0.1em;
+	padding: 0.3em;
+	line-height: 1.8em;
+}
+
+.palestrantes {
+	padding-top:2.5em;
+	background: #EF7247;
+}
+
+.palestrantes .palest-cartoes{
+	text-align:center;
+}
+
+.palestrantes .tit-palest {
+	font-size: 1.8em;
+	text-transform:uppercase;
+	color: white;
+	font-weight: bold;
+	text-align:center;
+	margin:0.2em;
+}
+
+.palestrantes .sub-tit-palest{
+	font-size: 1.2em;
+	color:white;
+	font-weight: bold;
+	font-stretch: expanded;
+	text-align:center;
+	margin:0.1em;
+}
+
+.palestrantes .palest-card{
+	display: inline-block;
+	background:white;
+	vertical-align:top;
+	border-radius:0.5em;
+	width:15em;
+	text-align:center;
+	margin: 1em;
+	padding: 1em;
+}
+
+.palestrantes .nome-palest {
+	padding:0.1em;
+	font-weight:bold;
+}
+
+.palestrantes .bio-palest {
+	padding: 0.1em;
+	line-heigth:1.2em;
+}
+
+.palestrantes .tit-palestra {
+	padding: 0.1em;
+	line-heigth:1.2em;
+	font-weight:bold;
+}
+
+.secao-form {
+	background-color:white;
+}
+
+.secao-form .tit-form {
+	color:#EF7247;
+	font-weight:bold;
+	font-size:2.5em;
+	text-align:center;
+	padding:0.5em;
+	font-stretch: expanded;
+}
+
+.secao-form .formulario {
+	text-align:center;
+	padding:0.5em;
+}
+
+.secao-form .rotulo-form {
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+.secao-form .botao-form {
+	margin:0.5em;
+	padding:0.2em;
+	font-weight:bold;
+	font-size:1.5em;
+	background-color: blue;
+	color:white;
+	border-radius: 0.5em;
+	box-shadow: 0  0  0.2em grey;
+}
+
+.secao-form .campo {
+	display:block;
+	width:90%;
+	font-size:1.5em;
+	margin:0.1em;
+	padding:0.5em;
+	border-radius:0.5em;
+	box-shadow: 0  0  0.2em grey;
+}

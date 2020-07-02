@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>AluraConf</title>
+  	<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+	 <header class="header">
+        <nav class="main-menu">
+            <ul>
+                <li class="menu-item">
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#palestrantes">Palestrantes</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="painel">
+	        <section class="painel-sup">
+	        	<h1>aluraconf</h1>
+	        	<h2>30maio|rio</h2>
+	        </section>	
+	        <section class="painel-inf">
+		        <h3><a href="#inscrever" class="button">inscreva-se</a></h3>
+			</section>
+		</div>
+	</header>
+
+	<section id="sobre" class="infos">
+		<h2 class="tit-infos">Muito conteúdo: do frontend ao backend</h2>
+		<h3 class="sub-tit-infos">30 de Maio de 2017 - na Cidade Maravilhosa</h3>
+		<p class="p-infos">Com a AluraConf abordaremos o que há de novidade e conhecimentos essenciais a um desenvolver mobile.	É uma grande chance de ficar por dentro dos assuntos de Android, iOS, Web Mobile, desenvolvimento híbrido, UX, além da parte backend com Rest, Microservices e BigData. O desenvolvedor atualizado vai estar aqui.</p>
+	</section>
+
+	<section id="palestrantes" class="palestrantes">
+		<div class="titulos-palest">
+			<h2 class="tit-palest">Palestrantes</h2>
+			<h3 class="sub-tit-palest">Aprenda com palestrantes que são referência no mercado</h3>
+		</div>
+
+		<ul class="palest-cartoes">
+			<li class = "palest-card">
+				<figure class="sobre-palestrante">
+					<img class="foto-palest" src="./img/palestrantes/placeholder.jpeg">
+					<figcaption class="nome-palest">Fulano</figcaption>
+				</figure>
+				<p class="bio-palest">Bio do Fulano</p>
+				<p class="tit-palestra">Palestra do Fulano</p>
+			</li>
+			<li class = "palest-card">
+				<figure class="sobre-palestrante">
+					<img class="foto-palest" src="./img/palestrantes/placeholder.jpeg">
+					<figcaption class="nome-palest">Fulano</figcaption>
+				</figure>
+				<p class="bio-palest">Bio do Fulano</p>
+				<p class="tit-palestra">Palestra do Fulano</p>
+			</li>
+			<li class = "palest-card">
+				<figure class="sobre-palestrante">
+					<img class="foto-palest" src="./img/palestrantes/placeholder.jpeg">
+					<figcaption class="nome-palest">Fulano</figcaption>
+				</figure>
+				<p class="bio-palest">Bio do Fulano. Bio do Fulano. Bio do Fulano. Bio do Fulano</p>
+				<p class="tit-palestra">Palestra do Fulano. Palestra do Fulano. Palestra do Fulano. Palestra do Fulano. </p>
+			</li>
+			<li class = "palest-card">
+				<figure class="sobre-palestrante">
+					<img class="foto-palest" src="./img/palestrantes/placeholder.jpeg">
+					<figcaption class="nome-palest">Fulano</figcaption>
+				</figure>
+				<p class="bio-palest">Bio do Fulano</p>
+				<p class="tit-palestra">Palestra do Fulano. Palestra do Fulano. Palestra do Fulano. Palestra do Fulano. </p>
+			</li>
+		</ul>
+	</section>
+
+	<section id="inscrever" class="secao-form">
+		<h2 class="tit-form">Seus dados</h2>
+		<form class="formulario">
+			<div class="campo-form">
+				<label class="rotulo-form">Nome</label>
+				<input class="campo">
+			</div>
+			<div class="campo-form">
+				<label class="rotulo-form">e-Mail</label>
+				<input type="email" class="campo">
+			</div>
+			<div class="enviar">
+				<button class="botao-form">Realizar inscrição</button>
+			</div>
+		</form>
+	</section>
+
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/index.js"></script>
+</html>
+
